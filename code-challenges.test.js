@@ -60,6 +60,41 @@ describe("mixedColors", () => {
 //   });
 // });
 
+describe('colors1', () => {
+  const expected = ["purple", "blue", "green", "yellow", "pink"];
+  it('matches even if received contains additional elements', () => {
+    expect(["purple", "blue", "green", "yellow", "pink"]).toEqual(expect.arrayContaining(expected));
+  });
+  it('does not match if received does not contain expected elements', () => {
+    expect(["yellow", "blue", "pink", "green"]).not.toEqual(expect.arrayContaining(expected));
+  });
+});
+
+describe('colors2', () => {
+  const expected = [
+    "chartreuse",
+    "indigo",
+    "periwinkle",
+    "ochre",
+    "aquamarine",
+    "saffron"
+  ];
+  it('matches even if received contains additional elements', () => {
+    expect([
+      "chartreuse",
+      "indigo",
+      "periwinkle",
+      "ochre",
+      "aquamarine",
+      "saffron"
+    ]).toEqual(expect.arrayContaining(expected));
+  });
+  it('does not match if received does not contain expected elements', () => {
+    expect(["saffron", "aquamarine", "periwinkle", "indigo", "ochre"]
+    ).not.toEqual(expect.arrayContaining(expected));
+  });
+});
+
 
 // HINT: Check out this resource: https://jestjs.io/docs/expect#expectarraycontainingarray
 
@@ -110,6 +145,23 @@ console.log(mixedColors(colors1))
 
 
 
+def shuffle_array_and_remove_first_value(array)
+if array.length < 2
+return array
+end 
+  @remove_first_value = array.drop(1)
+  @array.shuffle!
+
+  colors1 = ["purple", "blue", "green", "yellow", "pink"]
+  colors2 = [
+    "chartreuse",
+    "indigo",
+    "periwinkle",
+    "ochre",
+    "aquamarine",
+    "saffron"
+  ]
+end
 
 
 // Pseudo code:
@@ -128,6 +180,11 @@ it 'calculates the ending tally of votes'
   expect [votes1 = 11, votes2 = -31]
 }
 
+  const votes1 = { upVotes: 13, downVotes: 2 }
+  const votes2 = { upVotes: 13, downVotes: 2 }
+}
+
+expect [votes1 = 11, votes2 = -31]
 })
 
 
@@ -146,6 +203,16 @@ for(calculatedVotes === 'expected outputs')
   
 
   console.log(calculatedVotes(votes1, votes2))
+class Votes
+def initialize(votes1, votes2)
+    @votes1 = votes1
+    @votes2 = votes2
+  end
+end 
+
+calculated votes = Votes.new('votes1', 'votes2')
+p calculated votes
+ 
 
 // // Pseudo code:
 // input: 2 objects with 2 values
@@ -158,6 +225,7 @@ for(calculatedVotes === 'expected outputs')
 // a) Create a test with an expect statement using the variables provided.
 
 describe('dataTypesArrays', () => {
+describe('dataTypesArray1', () => {
   const expected = ["array", "object", "number", "string", "Boolean"];
   it('matches even if received contains additional elements', () => {
     expect(["array", "object", "number", "string", "Boolean"]).toEqual(expect.arrayContaining(expected));
@@ -184,6 +252,18 @@ const dataTypesArrays = (array) => {
   }
   console.log(dataTypesArrays(dataTypesArray1, dataTypesArray2))
 
+def combine_arrays_and_remove_duplicates(array)
+if array.length < 2
+return dataTypesArray1.concat(["string", "null", "Boolean", "string", "undefined"])
+new_array = array.uniq
+
+end 
+  @dataTypesArray1 = dataTypesArray1
+  @dataTypesArray2 = dataTypesArray2
+
+  dataTypesArray1 = ["array", "object", "number", "string", "Boolean"]
+  dataTypesArray2 = ["string", "null", "Boolean", "string", "undefined"]
+end
 
 
 // // Pseudo code:
